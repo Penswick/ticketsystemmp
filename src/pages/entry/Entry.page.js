@@ -10,7 +10,7 @@ export const Entry = () => {
     const {name, value} = e.target
 
     switch(name) {
-      case 'email':
+      case 'email': 
       setEmail(value);
       break;
       case 'password':
