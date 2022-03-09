@@ -13,7 +13,7 @@ export const Entry = () => {
       case 'email': 
       setEmail(value);
       break;
-      case 'password':
+      case 'password': 
       setPassword(value);
       break;
       default:
