@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import {Container, Row, Col, Form, Button} from 'react-bootstrap';
 
 
-export const LoginForm = ({handleOnChange, handleOnSubmit, switchForm, email, pass}) => {
+export const ResetPassword = ({handleOnChange, handleOnResetSubmit, switchForm, email}) => {
   return (
     <Container>
         <Row> {/* LOGIN CODE BELOW */}
             <Col>
-                <h1 className='text-info text-center'>Login</h1>
+                <h1 className='text-info text-center'>Reset password</h1>
                 <hr />
-                <Form autoComplete="off" onSubmit={handleOnSubmit}>
+                <Form autoComplete="off" onSubmit={handleOnResetSubmit}>
                     <Form.Group>
                         <Form.Label>Email Address</Form.Label>
                         <Form.Control 
@@ -22,26 +22,16 @@ export const LoginForm = ({handleOnChange, handleOnSubmit, switchForm, email, pa
                             required
                         />
                     </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control 
-                            type='password'
-                            name='password'
-                            placeholder='Password'
-                            value={pass}
-                            onChange = {handleOnChange}
-                            required
-                        />
-                    </Form.Group>
+                
                     <hr />
-                    <Button as="input" type="submit" value="Login" />{' '}
+                    <Button as="input" type="submit" value="Reset" />{' '}
                 </Form>
                 <hr />
             </Col>
         </Row>
         <Row>
             <Col>
-                <a href="#!" onClick={() => switchForm('reset')}>Forgot your password?</a>
+                <a href="#!" onClick={() => switchForm('login')}>Back to login</a>
             </Col>
         </Row>
 
@@ -49,10 +39,9 @@ export const LoginForm = ({handleOnChange, handleOnSubmit, switchForm, email, pa
   )
 }
 
-LoginForm.propTypes = {
+ResetPassword.propTypes = {
     handleOnChange: PropTypes.func.isRequired,
-    handleOnSubmit: PropTypes.func.isRequired,
+    handleOnResetSubmit: PropTypes.func.isRequired,
     switchForm: PropTypes.func.isRequired,
     email: PropTypes.string.isRequired,
-    pass: PropTypes.string.isRequired,
 }
